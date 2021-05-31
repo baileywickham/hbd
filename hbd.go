@@ -39,7 +39,7 @@ func handleVCF(name, phone, birthday string) {
 	today := time.Now().Local().Format("01-02")
 	if today == birthday[5:] {
 		message := generateMessage(name)
-		//sendText(phone, message)
+		sendText(phone, message)
 		println("sending: \""+message+"\" to:", phone)
 	}
 }
@@ -57,10 +57,10 @@ func cleanPhone(phone string) string {
 
 }
 func generateMessage(name string) string {
-	adj := []string{"Nice", "Funny", "Neat", "Kind"}
+	adj := []string{"Nice", "Funny", "Neat", "Kind", "Organized"}
 	rand.Seed(time.Now().Unix())
-	_ = adj[rand.Intn(len(adj))]
-	return fmt.Sprintf("hbd %s! you are very %s", name, "Nice")
+	s := adj[rand.Intn(len(adj))]
+	return fmt.Sprintf("hbd %s! you are very %s!", name, s)
 }
 
 func main() {
