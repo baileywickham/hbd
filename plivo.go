@@ -6,21 +6,25 @@ import (
 	"github.com/plivo/plivo-go"
 )
 
-const authId = "auth_id"
-const authToken = "auth_token"
+var client *plivo.Client
 
-func main() {
-	testPhloGetter()
+func sendText(dst, message string) {
+	resp, err := client.Messages.Create(plivo.MessageCreateParams{
+		Src:  "19712063040",
+		Dst:  dst,
+		Text: message,
+	})
+	fmt.Printf("%+v\n", resp)
+	if err != nil {
+		panic(err)
+	}
+
 }
 
-func testPhloGetter() {
-	phloClient, err := plivo.NewPhloClient(authId, authToken, &plivo.ClientOptions{})
+func init() {
+	var err error
+	client, err = plivo.NewClient("", "", &plivo.ClientOptions{})
 	if err != nil {
 		panic(err)
 	}
-	response, err := phloClient.Phlos.Get("phlo_id")
-	if err != nil {
-		panic(err)
-	}
-	fmt.Printf("Response: %#v\n", response)
 }
