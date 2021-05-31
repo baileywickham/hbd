@@ -40,7 +40,7 @@ func handleVCF(name, phone, birthday string) {
 	if today == birthday[5:] {
 		message := generateMessage(name)
 		//sendText(phone, message)
-		println(message, phone)
+		println("sending: \""+message+"\" to:", phone)
 	}
 }
 

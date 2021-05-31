@@ -1,0 +1,9 @@
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//iPhone OS 14.4.2//EN
+N:Wickham;Bailey;;;
+FN:Bailey Wickham
+EMAIL;type=INTERNET;type=HOME;type=pref:baileywickham@gmail.com
+TEL;type=CELL;type=VOICE;type=pref:(503) 989-2243
+BDAY:1999-05-30
+END:VCARD
