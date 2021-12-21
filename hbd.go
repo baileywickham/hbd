@@ -57,7 +57,7 @@ func cleanPhone(phone string) string {
 
 }
 func generateMessage(name string) string {
-	adj := []string{"Nice", "Funny", "Neat", "Kind", "Organized"}
+	adj := []string{"Nice", "Funny", "Neat", "Kind", "Organized", "Dependable"}
 	rand.Seed(time.Now().Unix())
 	s := adj[rand.Intn(len(adj))]
 	return fmt.Sprintf("hbd %s! you are very %s!", name, s)
